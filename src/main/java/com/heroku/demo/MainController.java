@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/home")
-public class HomeController {
+@RequestMapping("/")
+public class MainController {
 
     private RecordRepository repository;
 
     @Autowired
-    public HomeController(RecordRepository repository) {
+    public MainController(RecordRepository repository) {
         this.repository = repository;
     }
 
@@ -42,7 +42,7 @@ public class HomeController {
         List<Record> records = repository.findAll();
         model.addAttribute("records", records);
         model.addAttribute("insertRecord", new Record());
-        return "home";
+        return "index";
     }
 
     @RequestMapping(method = RequestMethod.POST)
