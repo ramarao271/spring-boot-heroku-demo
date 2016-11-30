@@ -42,7 +42,7 @@ public class MainController {
         List<Record> records = repository.findAll();
         model.addAttribute("records", records);
         model.addAttribute("insertRecord", new Record());
-        return "index";
+        return "pages/index";
     }
 
     @RequestMapping(method = RequestMethod.POST)
